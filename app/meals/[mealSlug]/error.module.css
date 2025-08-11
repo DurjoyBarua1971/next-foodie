@@ -1,0 +1,141 @@
+.error {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #ddd6cb;
+  margin-top: 100px;
+}
+
+.errorContent {
+  max-width: 600px;
+  text-align: center;
+  padding: 3rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.errorContent h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  color: #ff8a05;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.notFoundContent p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.generalErrorContent p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #cfa69b;
+}
+
+.errorActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #f9572a, #ff8a05);
+  color: white;
+  box-shadow: 0 4px 15px rgba(249, 87, 42, 0.3);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 87, 42, 0.4);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: #ddd6cb;
+  border: 2px solid #b89b84;
+}
+
+.btnSecondary:hover {
+  background: #b89b84;
+  color: #2c1e19;
+  transform: translateY(-2px);
+}
+
+.errorDetails {
+  margin: 1.5rem 0;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.errorDetails summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #ff8a05;
+  margin-bottom: 0.5rem;
+}
+
+.errorDetails summary:hover {
+  color: #f9572a;
+}
+
+.errorMessage {
+  font-family: "Courier New", monospace;
+  background: rgba(255, 0, 0, 0.1);
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: #ffcccb;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.errorDigest {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .errorContent {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+
+  .errorContent h1 {
+    font-size: 2rem;
+  }
+
+  .errorActions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
