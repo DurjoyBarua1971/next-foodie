@@ -1,14 +1,19 @@
 import React from "react";
 import classes from "./page.module.css";
-import { getMeal } from '@/lib/meal';
-import Image from 'next/image';
+import { getMeal } from "@/lib/meal";
+import Image from "next/image";
 
-export default async function MealDetailPage({params}: {params: {mealSlug: string}}) {
-  const meal = await getMeal(params.mealSlug);
+export default async function MealDetailPage({
+  params,
+}: {
+  params: Promise<{ mealSlug: string }>;
+}) {
+  const resolvedParams = await params;
+  const meal = await getMeal(resolvedParams.mealSlug);
 
-  meal.instructions = meal.instructions.replace(/\n/g, '<br />');
+  meal.instructions = meal.instructions.replace(/\n/g, "<br />");
 
-  console.log('Meal Detail Page:', meal);
+  console.log("Meal Detail Page:", meal);
 
   return (
     <>
@@ -25,9 +30,12 @@ export default async function MealDetailPage({params}: {params: {mealSlug: strin
         </div>
       </header>
       <main>
-        <p className={classes.instructions} dangerouslySetInnerHTML={{
-          __html: meal.instructions
-        }}></p>
+        <p
+          className={classes.instructions}
+          dangerouslySetInnerHTML={{
+            __html: meal.instructions,
+          }}
+        ></p>
       </main>
     </>
   );
