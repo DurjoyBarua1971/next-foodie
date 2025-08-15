@@ -32,6 +32,7 @@ function handleImageChange(event: React.ChangeEvent<HTMLInputElement>) {
   fileReader.onload = () => {
     if (typeof fileReader.result === "string") {
       setPickedImage(fileReader.result);
+      console.log("Image picked:", fileReader.result);
     } else {
       setPickedImage(null);
     }

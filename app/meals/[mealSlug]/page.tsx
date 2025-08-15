@@ -19,7 +19,14 @@ export default async function MealDetailPage({
     <>
       <header className={classes.header}>
         <div className={classes.image}>
-          <Image src={meal.image} alt={meal.title} fill />
+          {meal.image && <Image src={meal.image} alt={meal.title} fill />}
+          {!meal.image && (
+            <Image
+              src="https://tinyurl.com/defaultimagefoodie"
+              alt={meal.title}
+              fill
+            />
+          )}
         </div>
         <div className={classes.headerText}>
           <h1>{meal.title}</h1>
